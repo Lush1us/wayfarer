@@ -9,22 +9,6 @@
                     <img src="https://picsum.photos/150" class="rounded-circle" width="150", height="150">
                 {% endif  %}
             </div>
-<<<<<<< HEAD
-            <div class="card-body">
-                <h3>My Profile</h3>
-                <form method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="username"><p>Username:</p></label>
-                        <input type="text" name='username' placeholder='Username' value="{{user.username}}">
-                    </div>
-                    <div class="form-group">
-                        <label for="city"><p>Current City:</p></label>
-                        {{ form.city }}
-                    </div>
-                    <div class="form-group">
-                        <label for="avatar"><p>Profile Image:</p></label>
-=======
             <div class="card-body profile-info">
                 <h3>My Profile</h3>
                 <form method="post" enctype="multipart/form-data" class="profile-update">
@@ -34,29 +18,22 @@
                         {{ form.city }}
                     </div>
                     <div class="form-group">
->>>>>>> workingbranch
                         {{ form.avatar}}
                     </div>
                     <input type="submit" value="Update Profile">
                 </form>
             </div>
         </section>
-<<<<<<< HEAD
-        <section class="user-posts card">
-            <h4 class="city-posts">{{ user.profile.get_city_display }} Posts</h4>
-            {% for post in posts %}
-            <div class= "card-body">
-                <img src="https://picsum.photos/150" class="rounded-circle" width="50", height="50">
-                <a  href="{% url 'posts' post.id %}">{{ post.title }}</a>
-            </div>
-            {% endfor %}
-=======
         <section class="user-posts">
             <div class="card profile-posts">
                 <h4 class="city-posts">Your Posts</h4>
                 {% for post in posts %}
                     <div class= "card-body inner-profile-post">
+                        {% if user.profile.avatar.url %}                        
                         <img src="{{ user.profile.avatar.url }}" class="rounded-circle" width="50px", height="50px">
+                        {% else %}
+                        <img src="https://picsum.photos/150" class="rounded-circle" width="50px", height="50px">
+                        {% endif %}
                         <div class="inner-profile-post-info">
                         <a href="{% url 'posts' post.id%}">{{post.title}}</a>
                         <p>{{post.content|slice:"0:44"}} <a href="{% url 'posts' post.id%}">Read More...</a></p>
@@ -78,7 +55,6 @@
                     {% endif %}
                 {% endfor %}
             </div>
->>>>>>> workingbranch
         <p class="user-city" style="display:none">{{user.profile.city}}</p>
         </section>
     </div>
