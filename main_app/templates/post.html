@@ -30,8 +30,8 @@
         <hr>
         <p>{{post.content}}</p>
         {% if user.is_authenticated and user.username == author.username %}
-            <button class="btn btn-secondary" data-toggle="modal" data-target="#PostModal">Edit</button>
-            <button class="btn btn-secondary" data-toggle="modal" data-target="#DeleteModal">Delete</button>
+            <button class="btn btn-primary shadows" data-toggle="modal" data-target="#PostModal">Edit</button>
+            <button class="btn btn-primary shadows" data-toggle="modal" data-target="#DeleteModal">Delete</button>
         {% endif %}
         <!-- <a href="{% url 'delete_post' post.id %}">Delete</a> -->
     </section>

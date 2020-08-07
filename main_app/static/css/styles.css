@@ -66,9 +66,10 @@ h3 {
 	border-color: var(--main-hover);
 }
 
+
 /* Nav */
 .logged-in .nav-item {
-	margin: 0 10px;
+	margin: 0 7px;
 }
 
 .logged-out .nav-item {
