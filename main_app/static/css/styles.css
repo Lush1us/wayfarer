@@ -31,7 +31,12 @@ body {
 }
 .logo-text:hover {
 	text-decoration: none;
+	color: #c2bfbf
 }
+.text-shadow{
+	text-shadow: 1px 1px 1px black;
+}
+
 .helptext {
 	display: none;
 }
@@ -186,6 +191,9 @@ footer p {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+.profile-container .card {
+	border-radius: 10px!important;
 }
 
 .user-posts {
@@ -481,4 +489,5 @@ footer p {
 .green-title {
 	background-color: var(--dark);
 	color: var(--light);
+	border-radius: 10px 10px 0 0;
 }
